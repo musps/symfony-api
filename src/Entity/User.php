@@ -127,17 +127,6 @@ class User implements UserInterface
      */
     private $token;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EventUser", mappedBy="user")
-     * @Groups({"user:eventUsers"})
-     */
-    private $eventUsers;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\UserPoint", inversedBy="user")
-     */
-    private $userPoint;
-
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -146,7 +135,7 @@ class User implements UserInterface
         $this->roles = ['ROLE_USER'];
         $this->token = new ArrayCollection();
         $this->points = 0;
-        $this->eventUsers = new ArrayCollection();
+
     }
 
     public function getFullName(): string
@@ -406,49 +395,6 @@ class User implements UserInterface
     public function setPoints(int $points): self
     {
         $this->points = $points;
-        return $this;
-    }
-
-    /**
-     * @return Collection|EventUser[]
-     */
-    public function getEventUsers(): Collection
-    {
-        return $this->eventUsers;
-    }
-
-    public function addEventUser(EventUser $eventUser): self
-    {
-        if (!$this->eventUsers->contains($eventUser)) {
-            $this->eventUsers[] = $eventUser;
-            $eventUser->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEventUser(EventUser $eventUser): self
-    {
-        if ($this->eventUsers->contains($eventUser)) {
-            $this->eventUsers->removeElement($eventUser);
-            // set the owning side to null (unless already changed)
-            if ($eventUser->getUser() === $this) {
-                $eventUser->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getUserPoint(): ?UserPoint
-    {
-        return $this->userPoint;
-    }
-
-    public function setUserPoint(?UserPoint $userPoint): self
-    {
-        $this->userPoint = $userPoint;
-
         return $this;
     }
 }
