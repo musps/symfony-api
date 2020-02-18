@@ -1,0 +1,35 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: argon2i
+
+    providers:
+        users:
+            entity:
+                class: App\Entity\User
+                property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api:
+            stateless: true
+            pattern: ^/api/private
+            guard:
+                authenticators:
+                    - App\Security\ApiAuthenticator
+            access_denied_handler: App\Security\ApiAccessDeniedHandler
+
+    access_control:
+        - { path: ^/register$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/dashboard/*, roles: [ROLE_PLANIFICATION_ADMIN, ROLE_PLANIFICATION_USER, ROLE_PLANIFICATION_STATS] }
+        - { path: ^/logout, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tests/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: [ROLE_PLANIFICATION_USER, ROLE_PLANIFICATION_ADMIN] }
+
+    role_hierarchy:
+        ROLE_PLANIFICATION_SUPER_ADMIN: [ROLE_PLANIFICATION_ADMIN, ROLE_PLANIFICATION_STATS, ROLE_PLANIFICATION_USER]
+        ROLE_PLANIFICATION_ADMIN: [ROLE_PLANIFICATION_USER, ROLE_PLANIFICATION_STATS]

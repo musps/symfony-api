@@ -1,0 +1,63 @@
+version: '3'
+
+volumes:
+  api_vendor:
+  api_var:
+
+services:
+  ##############################
+  #
+  # Apache et PHP.
+  #
+  ##############################
+  app:
+    container_name: api-docker-app
+    build:
+      context: ./docker/app/
+      dockerfile: app.dockerfile
+    working_dir: /ms
+    volumes:
+      - ./docker/app/vhosts:/etc/apache2/sites-enabled/
+      - api_vendor:/ms/vendor:delegated
+      - ./:/ms:cached
+    ports:
+      - 80:80
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+
+  #############################
+  #
+  # MySQL.
+  #
+  #############################
+  mysql:
+    container_name: api-docker-mysql
+    image: mysql:5.7.24
+    command: --ignore-db-dir=lost+found
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: my_digital_bde
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 9&*s>v~}/wnT+MjM
+      MYSQL_ROOT_PASSWORD: 9&*s>v~}/wnT+MjM
+
+  #############################
+  #
+  # PHP My Admin.
+  #
+  #############################
+  phpmyadmin:
+    container_name: api-docker-phpmyadmin
+    image: phpmyadmin/phpmyadmin:4.7
+    ports:
+      - 81:80
+    links:
+      - mysql:db
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 9&*s>v~}/wnT+MjM
+      MYSQL_ROOT_PASSWORD: 9&*s>v~}/wnT+MjM
+      PMA_HOST: mysql

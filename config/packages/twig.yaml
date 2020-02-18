@@ -1,0 +1,15 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    paths:
+        'templates/template': 'template'
+        'templates/api': 'api'
+        'templates/app': 'app'
+        'templates/security': 'security'
+        'templates/dashboard': 'dashboard'
+        'templates/admin': 'admin'
+
+    globals:
+        app_version: '%app_version%'
+        reset_credentials: '%reset_credentials%'

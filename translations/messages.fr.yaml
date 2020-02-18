@@ -1,0 +1,114 @@
+#
+# APP TRANSLATION
+#
+APP_REGISTER_SUBJECT: Votre compte a bien été créé
+APP_REGISTER_CHILDREN_SUBJECT: Un compte vous a été créé
+APP_RESET_PASSWORD_CODE_SUBJECT: Demande de mot de passe oublié
+APP_RESET_PASSWORD_CONFIRMATION: Votre mot de passe a été modifié
+
+#
+# ROLES TRANSLATION
+#
+ROLE_PLANIFICATION_SUPER_ADMIN: Grand Administration
+ROLE_PLANIFICATION_ADMIN: Administration
+ROLE_PLANIFICATION_STATS: Statistique
+
+#
+# FORM TRANSLATION
+#
+
+FORM_ON_UPDATE: Les données ont bien été enregistrées
+FORM_ON_CREATE: Création enregistrée avec succès
+FORM_ON_ERROR: Une erreur est survenue
+FORM_CLIENT_ON_UPDATE: Les données ont bien été enregistrées
+FORM_CLIENT_ON_CREATE: Le client a été créé avec succès
+FORM_TECHNICIEN_ON_UPDATE: Les données ont bien été enregistrées
+FORM_TECHNICIEN_ON_CREATE: Le technicien a été créé avec succès
+FORM_TECHNICIEN_ON_DELETE_SUCCESS: Le technicien a été supprimé avec succès
+FORM_TECHNICIEN_ON_DELETE_ERROR: Une erreur s'est produite lors de la suppression du technicien
+FORM_ACCESS_ON_UPDATE: Les données ont bien été enregistrées
+FORM_ACCESS_ON_CREATE: L'accès a été créé avec succès
+FORM_ACCESS_ON_DELETE_SUCCESS: L'accès a été supprimé avec succès
+FORM_MATERIAL_ON_UPDATE: Les données ont bien été enregistrées
+FORM_MATERIAL_ON_CREATE: Le matériel a été créé avec succès
+FORM_SITE_ON_UPDATE: Les données ont bien été enregistrées
+FORM_SITE_ON_CREATE: Le site a été créé avec succès
+FORM_INTERVENTION_ON_UPDATE: L'intervention a été mise à jour avec succès
+
+# GLOBAL
+FORM_GLOBAL_SELECT_OPTION: Choisir une option
+FORM_GLOBAL_CHECKBOX_YES: Oui
+FORM_GLOBAL_CHECKBOX_NO: Non
+
+# \App\Entity\User
+FORM_USER_FIRSTNAME: Prénom
+FORM_USER_LASTNAME: Nom
+FORM_USER_EMAIL: Adresse e-mail
+FORM_USER_ENABLED: Accès à l'application
+FORM_USER_PHONE: Téléphone
+FORM_USER_ENABLED_OPTION_YES: Oui
+FORM_USER_ENABLED_OPTION_NO: Non
+
+# \App\Entity\User\UserTechnician
+FORM_USER_TECHNICIAN_CODE1: Code 1
+FORM_USER_TECHNICIAN_CODE2: Code 2
+FORM_USER_TECHNICIAN_CODE3: Code 3
+FORM_USER_TECHNICIAN_TEAM: Équipe
+FORM_USER_TECHNICIAN_ADDRESS: Adresse
+FORM_USER_TECHNICIAN_ZIPCODE: Code postal
+FORM_USER_TECHNICIAN_CITY: Ville
+FORM_USER_TECHNICIAN_ENABLED: Est activé
+
+# \App\Entity\User\UserAdmin
+FORM_USER_ADMIN_ENABLED: Est activé
+FORM_USER_ADMIN_ROLE: Droit d'accès
+FORM_USER_ADMIN_TMP_PASSWORD: Mot de passe
+
+# \App\Entity\Customer
+FORM_CUSTOMER_PHONE: Numéro de téléphone
+FORM_CUSTOMER_BILLING_CODE: Code de facturation
+FORM_CUSTOMER_SOCIAL_REASON: Raison sociale
+FORM_CUSTOMER_SIS: SIS
+FORM_CUSTOMER_VERIFIED: Informations client vérifiées
+FORM_CUSTOMER_VERIFIED_OPTION_AWAIT: En attente
+FORM_CUSTOMER_VERIFIED_OPTION_YES: Confirmée
+FORM_CUSTOMER_VERIFIED_OPTION_NO: Non confirmée
+
+# \App\Entity\Site
+FORM_SITE_CUSTOMER: Client
+FORM_SITE_CODE: Code du site
+FORM_SITE_NAME: Nom du site
+FORM_SITE_ADDRESS: Adresse
+FORM_SITE_ADDRESS_SECOND: Adresse complémentaire
+FORM_SITE_CITY: Ville
+FORM_SITE_CONTACT: Contact
+FORM_SITE_CONTACT_SECOND: Contact complémentaire
+FORM_SITE_ENABLED: Actif
+FORM_SITE_ZIPCODE: Code postal
+
+# \App\Entity\ZipCode
+FORM_ZIPCODE_CODE: Code postal
+
+# \App\Entity\Material
+FORM_MATERAL_NAME: Nom du parc
+FORM_MATERAL_SERIAL_NUMBER: Numéro de série
+FORM_MATERAL_SITE: Site
+FORM_MATERAL_ITEM_TONNAGE: Tonnage
+FORM_MATERAL_ITEM_ENERGY: Ėnergie
+FORM_MATERAL_ITEM_BRAND: Marque
+FORM_MATERAL_ITEM_TYPE: Type
+FORM_MATERAL_ENABLED: Actif
+
+# Formulaire d'une intervention
+FORM_INTERVENTION_PLANNER: ATP assigné
+FORM_INTERVENTION_EMERGENCY: Niveau d'urgence
+FORM_INTERVENTION_DESCRIPTION: Description Client
+FORM_INTERVENTION_COMMENT: Commentaire Client
+FORM_INTERVENTION_SYMPTOM: Symptôme 1
+FORM_INTERVENTION_SYMPTOM_MORE: Symptôme 2
+FORM_INTERVENTION_PLANNIFIED_AT: Date de l'intervention
+FORM_INTERVENTION_SCHEDULED_AT: Heure de l'intervention
+FORM_INTERVENTION_ASKING_REPORT: Demande de report de l’intervention du client ou demande mise en attente par l'ATP.
+FORM_INTERVENTION_CANCELED: Intervention annulée
+FORM_INTERVENTION_CANCELED_CONFIRMATION: Annulation confirmée au technicien dans GS
+FORM_INTERVENTION_TECHNICIAN: Technicien
